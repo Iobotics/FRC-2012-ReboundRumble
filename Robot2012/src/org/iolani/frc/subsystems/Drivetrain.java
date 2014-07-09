@@ -64,15 +64,19 @@ public class Drivetrain extends Subsystem {
     }
     
     public double getYawGyroDegrees() {
-        return _pitchGyro.getAngle();
+        return _yawGyro.getAngle();
     }
     
     public void resetYawGyro() {
-        _pitchGyro.reset();
+        _yawGyro.reset();
     }
     
     public void setMecanum(double mag, double dir, double rot) {
         _drive.mecanumDrive_Polar(mag, dir, rot);
+    }
+    
+    public void setMecanum_FieldOriented(double x, double y, double rot, double gyro) {
+        _drive.mecanumDrive_Cartesian(x, y, rot, gyro);
     }
     
     public void setTank(double left, double right) {

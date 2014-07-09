@@ -71,6 +71,10 @@ public class Drivetrain extends Subsystem {
         _yawGyro.reset();
     }
     
+    public void setYawGyroSensitivity(double sensitivity) {
+        _yawGyro.setSensitivity(sensitivity);
+    }
+    
     public void setMecanum(double mag, double dir, double rot) {
         _drive.mecanumDrive_Polar(mag, dir, rot);
     }
